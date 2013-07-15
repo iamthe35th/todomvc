@@ -8,7 +8,7 @@ var app = app || {};
 	// ---------------
 
 	// Our overall **AppView** is the top-level piece of UI.
-	app.AppView = Backbone.View.extend({
+	app.AppView = Giraffe.App.extend({
 
 		// Instead of generating a new element, bind to the existing skeleton of
 		// the App already present in the HTML.
@@ -16,6 +16,16 @@ var app = app || {};
 
 		// Our template for the line of statistics at the bottom of the app.
 		statsTemplate: _.template($('#stats-template').html()),
+
+		// If `routes` is defined on an app, it will automatically create a router.
+		routes: {
+			'*filter': 'routes:filter'
+		},
+
+		// The Giraffe app acts as an event aggregator for routes and other communication.
+		appEvents: {
+			"routes:filter": "setFilter",
+		},
 
 		// Delegated events for creating new items, and clearing completed ones.
 		events: {
@@ -36,7 +46,7 @@ var app = app || {};
 			this.listenTo(app.todos, 'add', this.addOne);
 			this.listenTo(app.todos, 'reset', this.addAll);
 			this.listenTo(app.todos, 'change:completed', this.filterOne);
-			this.listenTo(app.todos, 'filter', this.filterAll);
+			// this.listenTo(app.todos, 'filter', this.filterAll);
 			this.listenTo(app.todos, 'all', this.render);
 
 			app.todos.fetch();
@@ -90,6 +100,11 @@ var app = app || {};
 			app.todos.each(this.filterOne, this);
 		},
 
+		setFilter: function(filter) {
+			app.TodoFilter = filter || '';
+			this.filterAll();
+		},
+
 		// Generate the attributes for a new Todo item.
 		newAttributes: function () {
 			return {
@@ -126,4 +141,5 @@ var app = app || {};
 			});
 		}
 	});
+
 })(jQuery);
