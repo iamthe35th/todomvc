@@ -4,9 +4,10 @@ var app = app || {};
 var ENTER_KEY = 13;
 
 $(function () {
-	'use strict';
+  'use strict';
 
-	// kick things off by creating the `App`
-	new app.AppView();
-    Backbone.history.start();
+  // kick things off by creating the `App`
+  new app.AppView();
+  Giraffe.View.setDocumentEvents("click dblclick blur keypress");
+  Backbone.history.start();
 });
