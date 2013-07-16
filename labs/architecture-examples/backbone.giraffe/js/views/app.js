@@ -46,10 +46,10 @@ var app = app || {};
     // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function () {
 	    this.todos = app.todos;
-      // this.allCheckbox = this.$('#toggle-all')[0];
-      // this.$input = this.$('#new-todo');
-      // this.$footer = this.$('#footer');
-      // this.$main = this.$('#main');
+     //  this.allCheckbox = this.$('#toggle-all')[0];
+     //  this.$input = this.$('#new-todo');
+     //  this.$footer = this.$('#footer');
+     //  this.$main = this.$('#main');
 
       setTimeout(function(){app.todos.fetch();},1);
       this.attachTo(this.$el);
@@ -57,8 +57,7 @@ var app = app || {};
 
     // Re-rendering the App just means refreshing the statistics -- the rest
     // of the app doesn't change.
-    afterRender: function () {
-    	// debugger
+    render: function () {
       var completed = app.todos.completed().length;
       var remaining = app.todos.remaining().length;
 
@@ -87,7 +86,7 @@ var app = app || {};
     // appending its element to the `<ul>`.
     addOne: function (todo) {
       var view = new app.TodoView({ model: todo });
-      $('#todo-list').append(view.render().el);
+      view.attachTo('#todo-list');
     },
 
     // Add all items in the **Todos** collection at once.
