@@ -25,6 +25,6 @@ Articles and guides from the community:
 
 Get help from other Backbone.Giraffe users:
 
-* [Chat with other users](goo.gl/Ychtp)
+* [Chat with other users](http://goo.gl/Ychtp)
 
-_If you have other helpful links to share, or find any of the links above no longer work, please [let us know](goo.gl/Ychtp)._
+_If you have other helpful links to share, or find any of the links above no longer work, please [let us know](https://github.com/tastejs/todomvc/issues)._
