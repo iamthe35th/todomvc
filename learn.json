@@ -907,10 +907,10 @@
 	"giraffejs": {
 		"name": "Backbone.Giraffe",
 		"description": "Backbone.Giraffe is a light and flexible library that extends Backbone.js to new heights.",
-		"homepage": "http://barc.github.io/backbone.giraffe/index.html",
+		"homepage": "barc.github.io/backbone.giraffe",
 		"examples": [{
 			"name": "Architecture Example",
-			"url": "https://github.com/iamthe35th/todomvc/tree/gh-pages/labs/architecture-examples/backbone.giraffe"
+			"url": "//github.com/iamthe35th/todomvc/tree/gh-pages/labs/architecture-examples/backbone.giraffe"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
