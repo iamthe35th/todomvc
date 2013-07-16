@@ -910,7 +910,7 @@
 		"homepage": "barc.github.io/backbone.giraffe",
 		"examples": [{
 			"name": "Architecture Example",
-			"url": "//github.com/iamthe35th/todomvc/tree/gh-pages/labs/architecture-examples/backbone.giraffe"
+			"url": "labs/architecture-examples/backbone.giraffe"
 		}],
 		"link_groups": [{
 			"heading": "Official Resources",
