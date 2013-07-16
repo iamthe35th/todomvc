@@ -35,7 +35,7 @@ var app = app || {};
     },
 
     ui: {
-    	allCheckbox: '#toggle-all',
+    	$allCheckbox: '#toggle-all',
     	$input: '#new-todo',
     	$footer: '#footer',
     	$main: '#main'
@@ -46,13 +46,8 @@ var app = app || {};
     // loading any preexisting todos that might be saved in *localStorage*.
     initialize: function () {
 	    this.todos = app.todos;
-     //  this.allCheckbox = this.$('#toggle-all')[0];
-     //  this.$input = this.$('#new-todo');
-     //  this.$footer = this.$('#footer');
-     //  this.$main = this.$('#main');
 
       setTimeout(function(){app.todos.fetch();},1);
-      this.attachTo(this.$el);
     },
 
     // Re-rendering the App just means refreshing the statistics -- the rest
@@ -79,7 +74,7 @@ var app = app || {};
         this.$footer.hide();
       }
 
-      this.allCheckbox.checked = !remaining;
+      this.$allCheckbox[0].checked = !remaining;
     },
 
     // Add a single todo item to the list by creating a view for it, and
@@ -135,7 +130,7 @@ var app = app || {};
     },
 
     toggleAllComplete: function () {
-      var completed = this.allCheckbox.checked;
+      var completed = this.$allCheckbox[0].checked;
 
       app.todos.each(function (todo) {
         todo.save({
